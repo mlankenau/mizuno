@@ -10,6 +10,8 @@ module Mizuno
         include_class 'org.eclipse.jetty.server.nio.SelectChannelConnector'
         include_class 'org.eclipse.jetty.util.thread.QueuedThreadPool'
         include_class 'org.eclipse.jetty.servlet.DefaultServlet'
+				include_class 'org.eclipse.jetty.servlets.GzipFilter'
+				include_class 'org.eclipse.jetty.servlet.FilterHolder'
 
         #
         # Provide accessors so we can set a custom logger and a location
@@ -62,6 +64,13 @@ module Mizuno
             rack_servlet.rackup(app)
             holder = ServletHolder.new(rack_servlet)
             context.addServlet(holder, "/")
+
+            # add gzip filter
+            gzip_filter = GzipFilter.new
+            holder = FilterHolder.new(gzip_filter);
+						holder.setInitParameter("mimeTypes", "text/html,text/plain,text/xml,application/json")
+						context.addFilter(holder, "/*", 0)
+
 
             # Add the context to the server and start.
             @server.set_handler(context)
