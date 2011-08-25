@@ -45,7 +45,7 @@ module Mizuno
 
             # Thread pool
             thread_pool = QueuedThreadPool.new
-            thread_pool.min_threads = 5
+            thread_pool.min_threads = 20
             thread_pool.max_threads = 100 
             @server.set_thread_pool(thread_pool)
 
