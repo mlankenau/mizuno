@@ -48,7 +48,7 @@ module Mizuno
     def stop
       if running?
         puts "Stopping mizuno (pid: #{pid})"
-        kill( pid )
+        kill!
       else
         puts "Mizuno not running"
       end
@@ -71,7 +71,7 @@ module Mizuno
       false
     end
 
-    def kill( signal = :TERM )
+    def kill!( signal = :TERM )
       print "* killing #{pid} with :#{signal} "
       Process.kill( signal, pid )
 
@@ -87,7 +87,7 @@ module Mizuno
       # when still running, the forcefully stop
       if Process.getpgid( pid ) != -1
         puts " FAILED"
-        kill( pid, :KILL )
+        kill!( :KILL )
       end
     rescue Errno::ESRCH
       print " OK"
