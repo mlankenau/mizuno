@@ -2,7 +2,7 @@ require 'rake'
 require 'rake/tasklib'
 
 module Mizuno
-  class RakeTask < ::Rake::TaskLib
+  class RakeTasks < ::Rake::TaskLib
     include ::Rake::DSL if defined?(::Rake::DSL)
 
     
