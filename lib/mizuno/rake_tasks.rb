@@ -62,7 +62,6 @@ module Mizuno
       end
     end
 
-
     def running?
       return false unless File.exist?( pidfile )
 
