@@ -11,7 +11,7 @@ module Mizuno
 
     def initialize
       @env = ENV['RACK_ENV'] || 'development'
-      @cmd, @port = 'bin/mizuno', 3000
+      @cmd, @port = File.dirname(__FILE__) + '/../../bin/mizuno', 3000
       @pidfile, @outfile = 'tmp/pids/mizuno.pid', 'log/mizuno.out'
 
       yield self if block_given?
