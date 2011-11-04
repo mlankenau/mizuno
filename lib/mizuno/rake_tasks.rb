@@ -8,11 +8,13 @@ module Mizuno
     attr_accessor :env
     attr_accessor :cmd, :port
     attr_accessor :pidfile, :outfile
+    attr_accessor :java_opts
 
     def initialize
       @env = ENV['RACK_ENV'] || 'development'
       @cmd, @port = File.dirname(__FILE__) + '/../../bin/mizuno', 3000
       @pidfile, @outfile = 'tmp/pids/mizuno.pid', 'log/mizuno.out'
+      @java_opts = nil
 
       yield self if block_given?
 
@@ -31,7 +33,11 @@ module Mizuno
       end
     end
 
+    def java_opts
+      @java_opts.nil? ? '' : "JAVA_OPTS=\"#{@java_opts}\" "
+    end
     
+
     private
 
     def start
@@ -41,7 +47,7 @@ module Mizuno
       end
 
       puts "Starting mizuno in #{env}"
-      command = "#{cmd} -p #{port} -E #{env} -P #{pidfile} >> #{outfile} 2>&1 &"
+      command = "#{java_opts}#{cmd} -p #{port} -E #{env} -P #{pidfile} >> #{outfile} 2>&1 &"
       sh( command ) { |ok, status| ok or fail "failed with status (#{status.exitstatus})" }
     end
 
