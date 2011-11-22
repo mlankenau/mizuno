@@ -12,16 +12,29 @@ Gem::Specification.new do |spec|
         README.markdown
         LICENSE
         mizuno.gemspec
-        lib/java/jetty-continuation-7.3.0.v20110203.jar
-        lib/java/jetty-http-7.3.0.v20110203.jar
-        lib/java/jetty-io-7.3.0.v20110203.jar
-        lib/java/jetty-jmx-7.3.0.v20110203.jar
-        lib/java/jetty-security-7.3.0.v20110203.jar
-        lib/java/jetty-server-7.3.0.v20110203.jar
-        lib/java/jetty-servlet-7.3.0.v20110203.jar
-        lib/java/jetty-servlets-7.3.0.v20110203.jar
-        lib/java/jetty-util-7.3.0.v20110203.jar
-        lib/java/servlet-api-2.5.jar
+        lib/java/jetty-ajp-8.0.4.v20111024.jar
+        lib/java/jetty-all-8.0.4.v20111024-javadoc.jar
+        lib/java/jetty-annotations-8.0.4.v20111024.jar
+        lib/java/jetty-client-8.0.4.v20111024.jar
+        lib/java/jetty-continuation-8.0.4.v20111024.jar
+        lib/java/jetty-deploy-8.0.4.v20111024.jar
+        lib/java/jetty-http-8.0.4.v20111024.jar
+        lib/java/jetty-io-8.0.4.v20111024.jar
+        lib/java/jetty-jmx-8.0.4.v20111024.jar
+        lib/java/jetty-jndi-8.0.4.v20111024.jar
+        lib/java/jetty-overlay-deployer-8.0.4.v20111024.jar
+        lib/java/jetty-plus-8.0.4.v20111024.jar
+        lib/java/jetty-policy-8.0.4.v20111024.jar
+        lib/java/jetty-rewrite-8.0.4.v20111024.jar
+        lib/java/jetty-security-8.0.4.v20111024.jar
+        lib/java/jetty-server-8.0.4.v20111024.jar
+        lib/java/jetty-servlet-8.0.4.v20111024.jar
+        lib/java/jetty-servlets-8.0.4.v20111024.jar
+        lib/java/jetty-util-8.0.4.v20111024.jar
+        lib/java/jetty-webapp-8.0.4.v20111024.jar
+        lib/java/jetty-websocket-8.0.4.v20111024.jar
+        lib/java/jetty-xml-8.0.4.v20111024.jar
+        lib/java/servlet-api-3.0.jar
         lib/mizuno/http_server.rb
         lib/mizuno/rack_servlet.rb
         lib/mizuno.rb
